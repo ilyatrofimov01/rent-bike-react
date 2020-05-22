@@ -8,7 +8,7 @@ const CreateNewRent = () =>{
             <h2>Create new rent</h2>
             <div className = "rent-container d-flex">
                <label className = 'view d-flex'>
-                   Bike name:
+                   Bike name
                    <input placeholder = "Ex.Cannonride S6"
                     type = "text"
                    
@@ -16,17 +16,19 @@ const CreateNewRent = () =>{
                </label>
 
                <label className = 'view d-flex'>
-                   Bike Type:
+                   Bike Type
                    <input/>
                </label> 
 
-               <label className = 'view d-flex'>
-                   Rent Price:
-                   <input/>
+               <label className = 'price view d-flex'>
+                   Rent Price
+                   <input placeholder = "99.00"
+                   type = "text"
+                   />
                </label>
 
                <button type="submit"
-                    className="btn btn-success">Submit</button>
+                    className="btn btn-success">Submit rent</button>
             </div>
         </div>
     )

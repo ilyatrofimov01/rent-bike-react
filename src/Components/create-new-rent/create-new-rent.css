@@ -4,5 +4,21 @@
 }
 .rent-container {
     align-items: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: flex-end;
+    background-color: #cdd1e3 ;
+    border-radius: 3px;
+    padding: .8rem 0;
+}
+.rent-container button{
+    height:  2rem;
+    margin-bottom: .5rem;    
+    padding-bottom: 8px;
+}
+.rent-container input {
+    height:  2rem;
+    padding-left: .5rem;
+}
+.price{
+    width: 14%;
 }

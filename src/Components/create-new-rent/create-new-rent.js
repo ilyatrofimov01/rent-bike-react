@@ -5,13 +5,12 @@ import  './create-new-rent.css';
 const CreateNewRent = () =>{
     return (
         <div className="new-rent">
-            <h2>&#x1F911; Create new rent</h2>
+            <h2><span role ="img" aria-label="money">&#x1F911;</span> Create new rent</h2>
             <div className = "rent-container d-flex">
                <label className = 'view d-flex'>
                    Bike name
                    <input placeholder = "Ex.Cannonride S6"
                     type = "text"
-                   
                    />
                </label>
 
@@ -27,7 +26,7 @@ const CreateNewRent = () =>{
                    />
                </label>
 
-               <button type="submit"
+               <button type="button"
                     className="btn btn-success">Submit rent</button>
             </div>
         </div>

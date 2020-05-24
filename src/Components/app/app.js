@@ -3,7 +3,8 @@ import './app.css';
 
 import AppHeader from '../app-header';
 import CreateNewRent from '../create-new-rent';
-import AvailableBikes from '../available-bikes'
+import AvailableBikes from '../available-bikes';
+import RentedBikes from '../rented-bikes';
 
 
 
@@ -22,6 +23,7 @@ const App = () => {
      <div className = "rent-app">
         <AppHeader />
         <CreateNewRent />
+        <RentedBikes allBikes = {datalist}/>
         <AvailableBikes allBikes = {datalist}/>
      </div>
  )

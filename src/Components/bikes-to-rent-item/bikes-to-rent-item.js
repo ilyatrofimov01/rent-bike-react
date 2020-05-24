@@ -2,20 +2,28 @@ import React, {Component} from 'react';
 import './bikes-to-rent-item.css'
 
 
-
 export default class BikesToRentItem extends Component{
 
     state = {
         rent:"norent"
     }
     onRentClick = () => {
-        this.setState({rent:'rent'});
-        console.log(this);
+        this.setState({
+            rent:'rent'
+        })
+    }
 
+    onCencelRent = () =>{
+        this.setState({
+            rent:'norent'
+        })
     }
 
     render (){
-        const {label,type,price,rent} = this.props;
+        const {label,type,price/*,rent*/} = this.props;
+        const {rent} = this.state
+       
+
 
         if(rent === "norent"){
             return (
@@ -40,18 +48,21 @@ export default class BikesToRentItem extends Component{
             </span>
             )
         } else if (rent === 'rent') {
+            
+
             return(
+
                 <span className="bikes-to-rent-item">
                         <span
                             className="bikes-to-rent-item-label"
-                            onClick = {this.onLabelClick }
                             >
                             {label} /  {type} / ${price}
                             
                         </span>
                         
                         <button type="button"
-                            className="btn btn-danger item-button">Delete
+                            className="btn btn-danger item-button"
+                            onClick = {this.onCencelRent}>Cencel rent
                         </button>
             
                 </span>

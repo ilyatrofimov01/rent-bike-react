@@ -4,8 +4,13 @@ import './bikes-to-rent-item.css'
 
 
 export default class BikesToRentItem extends Component{
-    onLabelClick = () => {
-        console.log(`Clicked to ${this.props.label}`);
+
+    state = {
+        rent:"norent"
+    }
+    onRentClick = () => {
+        this.setState({rent:'rent'});
+        console.log(this);
 
     }
 
@@ -17,7 +22,6 @@ export default class BikesToRentItem extends Component{
                 <span className="bikes-to-rent-item">
                     <span
                         className="bikes-to-rent-item-label"
-                        onClick = {this.onLabelClick }
                         >
                         {label} /  {type} / ${price}
                         
@@ -25,6 +29,7 @@ export default class BikesToRentItem extends Component{
                     
                     <div className="button-group">
                         <button type="button"
+                            onClick = {this.onRentClick }
                             className="btn btn-primary item-button">Rent
                         </button>
 

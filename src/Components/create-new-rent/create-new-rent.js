@@ -4,8 +4,8 @@ import  './create-new-rent.css';
 
 const CreateNewRent = () =>{
     return (
-        <div>
-            <h2>Create new rent</h2>
+        <div className="new-rent">
+            <h2>&#x1F911; Create new rent</h2>
             <div className = "rent-container d-flex">
                <label className = 'view d-flex'>
                    Bike name

@@ -3,7 +3,6 @@
     
 }
 .rent-container {
-    align-items: row;
     justify-content: space-around;
     align-items: flex-end;
     background-color: #cdd1e3 ;
@@ -11,6 +10,7 @@
     padding: .8rem 0;
 }
 .rent-container button{
+    vertical-align: middle;
     height:  2rem;
     margin-bottom: .5rem;    
     padding-bottom: 8px;
@@ -21,4 +21,7 @@
 }
 .price{
     width: 14%;
+}
+.new-rent h2{
+    font-size:1.5rem
 }

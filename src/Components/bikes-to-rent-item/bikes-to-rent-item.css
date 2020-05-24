@@ -1,0 +1,18 @@
+.bikes-to-rent-item{
+   display: flex;
+   justify-content: space-between;
+   flex-direction: row;
+   border-radius: 3px;
+}
+.bikes-to-rent-item-label{
+    font-family: sans-serif; 
+    padding: .5rem;
+    font-size: 1rem;      
+}
+.button-group{
+    display:flex;
+    justify-content: space-around;
+}
+button:first-child{
+    margin-right: 20px;
+}

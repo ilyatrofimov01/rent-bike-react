@@ -7,7 +7,8 @@
 .bikes-to-rent-item-label{
     font-family: sans-serif; 
     padding: .5rem;
-    font-size: 1rem;      
+    font-size: 1rem;   
+    cursor: pointer;   
 }
 .button-group{
     display:flex;

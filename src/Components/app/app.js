@@ -15,7 +15,7 @@ const App = () => {
         {id: 1, label:'HillrideBike',type:'Hill ride',price: 12.99, rent: 'norent'},
         {id: 2, label:'RoadrideBike',type:'Hill ride',price: 12.99, rent: 'norent'},
         {id: 3, label:'MixrideBike',type:'Hill ride',price: 12.99, rent: 'norent'},
-        {id: 4, label:'MixrideBike',type:'Hill ride',price: 12.99, rent: 'rent'}
+        {id: 4, label:'SuperFastBike',type:'Hill ride',price: 12.99, rent: 'rent'}
     ]
 
 

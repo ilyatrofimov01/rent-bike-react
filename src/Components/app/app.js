@@ -30,7 +30,7 @@ export default class App extends Component {
                 ...datalist.slice(0,index),
                 ...datalist.slice(index+1)
             ];
-            console.log(newArray);
+            
             return{
                 datalist : newArray
             }

@@ -5,27 +5,27 @@ import './bikes-to-rent-item.css'
 export default class BikesToRentItem extends Component{
 
     state = {
-        rent:"norent"
+        rent:false
     }
     onRentClick = () => {
         this.setState({
-            rent:'rent'
+            rent:true
         })
     }
 
     onCencelRent = () =>{
         this.setState({
-            rent:'norent'
+            rent:false
         })
     }
 
     render (){
-        const {label,type,price/*,rent*/} = this.props;
+        const {label, type, price, onDeleted/*,rent*/} = this.props;
         const {rent} = this.state
        
 
 
-        if(rent === "norent"){
+        if(rent === false){
             return (
                 <span className="bikes-to-rent-item">
                     <span
@@ -42,12 +42,14 @@ export default class BikesToRentItem extends Component{
                         </button>
 
                         <button type="button"
-                            className="btn btn-danger item-button">Delete
+                            className="btn btn-danger item-button"
+                            onClick = {onDeleted}
+                            >Delete
                         </button>
                     </div>
             </span>
             )
-        } else if (rent === 'rent') {
+        } else if (rent === true) {
             
 
             return(

@@ -4,28 +4,21 @@ import './bikes-to-rent-item.css'
 
 export default class BikesToRentItem extends Component{
 
-    state = {
-        rent:false
-    }
-    onRentClick = () => {
-        this.setState({
-            rent:true
-        })
-    }
-
-    onCencelRent = () =>{
-        this.setState({
-            rent:false
-        })
-    }
+    // onCencelRent = () =>{
+    //     this.setState({
+    //         rent:false
+    //     })
+    // }
 
     render (){
-        const {label, type, price, onDeleted/*,rent*/} = this.props;
-        const {rent} = this.state
+        const {label, type, price, onDeleted, onRentClick, onCencelRent/*rent*/} = this.props;
+        //const {rent} = this.state
+       // const rent = this.rent
+       // console.log(this.props.rent)
        
 
 
-        if(rent === false){
+        if(this.props.rent === false){
             return (
                 <span className="bikes-to-rent-item">
                     <span
@@ -37,7 +30,7 @@ export default class BikesToRentItem extends Component{
                     
                     <div className="button-group">
                         <button type="button"
-                            onClick = {this.onRentClick }
+                            onClick = {onRentClick}
                             className="btn btn-primary item-button">Rent
                         </button>
 
@@ -49,7 +42,7 @@ export default class BikesToRentItem extends Component{
                     </div>
             </span>
             )
-        } else if (rent === true) {
+        } else if (this.props.rent === true) {
             
 
             return(
@@ -64,7 +57,7 @@ export default class BikesToRentItem extends Component{
                         
                         <button type="button"
                             className="btn btn-danger item-button"
-                            onClick = {this.onCencelRent}>Cencel rent
+                            onClick = {onCencelRent}>Cencel rent
                         </button>
             
                 </span>

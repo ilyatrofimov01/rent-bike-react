@@ -4,19 +4,18 @@ import './bikes-to-rent.css';
 import AvailableBikes from  '../available-bikes';
 import  RentedBikes from '../rented-bikes';
 
-const BikesToRent = ({bikes,onDeleted}) =>{
-    console.log(bikes);
+const BikesToRent = ({bikes,onDeleted, onRentClick,onCencelRent}) =>{
     var available = bikes.filter((el) => el.rent  === false );
     var rented = bikes.filter((el) => el.rent === true );
-    console.log(available,rented);
+   
     
 
     const availableShow = available.map( (item) =>{
         const{id, ...itemProps} = item;
-        
         return (  
             <li key = {id} className ="list-group-item">
-                <BikesToRentItem {...itemProps}
+                <BikesToRentItem {...itemProps} 
+                onRentClick  = {(item) => onRentClick(id)}
                 onDeleted = { (item)=> onDeleted(id)}
                 />
             </li>
@@ -30,7 +29,8 @@ const BikesToRent = ({bikes,onDeleted}) =>{
         return (  
             <li key = {id} className ="list-group-item">
                 <BikesToRentItem {...itemProps}
-                onDeleted = { (item)=> onDeleted(id)}
+                onCencelRent = {(item) => onCencelRent(id)}
+                // onDeleted = { (item)=> onDeleted(id)}
                 />
             </li>
             )

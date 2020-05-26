@@ -27,3 +27,17 @@
     font-size:1.5rem;
     margin-top: 1rem;
 }
+.dropdown{
+    width: 14rem;
+    height:  2rem;
+    
+}
+.Dropdown-control{
+    padding: .2rem;
+    height: 2rem;
+    border-width: .1rem;
+
+}
+.myPlaceholderClassName{
+    color:grey;
+}

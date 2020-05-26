@@ -30,7 +30,7 @@ const BikesToRent = ({bikes,onDeleted, onRentClick,onCencelRent}) =>{
             <li key = {id} className ="list-group-item">
                 <BikesToRentItem {...itemProps}
                 onCencelRent = {(item) => onCencelRent(id)}
-                // onDeleted = { (item)=> onDeleted(id)}
+
                 />
             </li>
             )

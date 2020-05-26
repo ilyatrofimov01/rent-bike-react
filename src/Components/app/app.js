@@ -25,7 +25,6 @@ export default class App extends Component {
         this.setState(({datalist}) => {
             const index = datalist.findIndex((el) => el.id === id);
 
-
             const newArray = [
                 ...datalist.slice(0,index),
                 ...datalist.slice(index+1)

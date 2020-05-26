@@ -4,11 +4,7 @@ import './bikes-to-rent-item.css'
 
 export default class BikesToRentItem extends Component{
 
-    // onCencelRent = () =>{
-    //     this.setState({
-    //         rent:false
-    //     })
-    // }
+  
 
     render (){
         const {label, type, price, onDeleted, onRentClick, onCencelRent/*rent*/} = this.props;

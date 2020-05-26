@@ -9,18 +9,14 @@
     border-radius: 3px;
     padding: .8rem 0;
 }
-.rent-container button{
-    vertical-align: middle;
-    height:  2rem;
-    margin-bottom: .5rem;    
-    padding-bottom: 8px;
-}
+
 .rent-container input {
     height:  2rem;
     padding-left: .5rem;
 }
-.price{
-    width: 14%;
+.rentPrice{
+    width: 10rem;
+    margin-right: 2rem;
 }
 .new-rent h2{
     color: #5c5c6b;
@@ -39,5 +35,15 @@
 
 }
 .myPlaceholderClassName{
-    color:grey;
+    color: #5c5c6b;
+}
+.submitForm{
+    display: flex;
+    flex-direction: row;
+}
+.submitForm button{
+    vertical-align: bottom;
+    height:  2rem;
+    margin-top: 24px;    
+    padding-bottom: 8px;
 }

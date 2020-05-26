@@ -21,6 +21,9 @@ export default class App extends Component {
         ]
     }
 
+    maxId = 100;
+
+
     deleteItem = (id) => {
         this.setState(({datalist}) => {
             const index = datalist.findIndex((el) => el.id === id);
@@ -38,6 +41,24 @@ export default class App extends Component {
 
     }
 
+     addItem =(label,type,price)=>{
+         const newItem = {
+             label,
+             type,
+             price,
+             id: this.maxId++,
+             rent: false
+         };
+         this.setState(({datalist})=>{
+            const newArray = [...datalist,newItem];
+            return{
+                    datalist : newArray
+              };
+
+         });
+        console.log(newItem)
+
+     }
     changeRent = (id) => {
         this.setState(({datalist}) => {
             const index = datalist.findIndex((el) => el.id === id);
@@ -60,9 +81,9 @@ export default class App extends Component {
 
         return (
             <div className = "rent-app">
-               <AppHeader />
-               <CreateNewRent />
-               <BikesToRent bikes = {this.state.datalist}
+                <AppHeader />
+                <CreateNewRent onItemAdded = {this.addItem}/>
+                <BikesToRent bikes = {this.state.datalist}
                 onDeleted = {this.deleteItem} 
                 onRentClick = {this.changeRent}
                 onCencelRent = {this.changeRent}

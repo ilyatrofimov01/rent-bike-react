@@ -6,19 +6,40 @@ import  './create-new-rent.css';
 
 export default class CreateNewRent extends Component{
     state ={
-        value: "Custom"
+        label: '',
+        type: "Custom",
+        price: '', 
     }
-    Change =(event) =>{
-        this.setState ({value : event.value})
-        console.log(event.value);
+    Change =(event) =>{ 
+        this.setState ({type : event.value})
     }
+
+    onLabelChangeLabel =(event) =>{
+        this.setState({
+            label : event.target.value
+        })
+    }
+
+    onLabelChangePrice =(event) =>
+    {
+        this.setState({
+            price : event.target.value
+        })
+  
+    }
+
+    onSubmit = (event) =>{
+        event.preventDefault();
+        this.props.onItemAdded(this.state.label,this.state.type,parseFloat(this.state.price));
+    }
+
 
     render (){
         
         const options = [
-             'HillRide',
-             'Mixride',
-             'RoadRide',
+             'Hill Ride',
+             'Mix ride',
+             'Road Ride',
              'Custom',
              'BMX',
         ];
@@ -32,25 +53,31 @@ export default class CreateNewRent extends Component{
                <label className = 'view d-flex'>
                    Bike name
                    <input placeholder = "Ex.Cannonride S6"
+                    className="form-control"
+                    onChange ={this.onLabelChangeLabel}
                     type = "text"
                    />
                </label>
-
-               <label className = 'view d-flex'>
+           
+                <label className = 'view d-flex'>
                    Bike Type
-                    <Dropdown  className ="dropdown" placeholderClassName='myPlaceholderClassName' options ={options} onChange={this.Change} value={this.state.value} placeholder="Select bicycle type" />
-                    
-                    </label> 
+                    <Dropdown  className ="dropdown" placeholderClassName='myPlaceholderClassName' options ={options} onChange={this.Change} value={this.state.type} placeholder="Select bicycle type" />   
+                </label> 
 
-               <label className = 'price view d-flex'>
-                   Rent Price
-                   <input placeholder = "99.00"
-                   type = "text"
-                   />
-               </label>
+                <form onSubmit={this.onSubmit} className ="submitForm">
+                    <label className ="rentPrice" >
+                        Rent Price
+                        <input placeholder = "99.00"
+                            className="form-control"
+                            onChange ={this.onLabelChangePrice}
+                            type = "text"/>
+                    </label>
 
-               <button type="button"
-                    className="btn btn-success">Submit rent</button>
+                    <button
+                        className="btn btn-success">Submit rent
+                    </button>
+
+                </form>
             </div>
         </div>
         )

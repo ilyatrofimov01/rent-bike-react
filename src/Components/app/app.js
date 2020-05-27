@@ -10,8 +10,13 @@ import BikesToRent from '../bikes-to-rent';
     
 export default class App extends Component {
 
+    data = async () =>{
 
-
+        let res = await fetch('http://localhost:8090');
+            res = await res.json();
+        return console.log(res);
+    }
+    
     state = {
         datalist: [
             {id: 1, label:'HillrideBike',type:'Hill ride',price: 12.99, rent: false},
@@ -77,7 +82,7 @@ export default class App extends Component {
     }
 
     render(){
-
+        this.data();
 
         return (
             <div className = "rent-app">
